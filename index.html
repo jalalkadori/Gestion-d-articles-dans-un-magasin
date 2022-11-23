@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>MAGASIN</title>
 </head>
 <body>
-    
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="imgBox">
+
+                </div>
+
+                <div class="formBox">
+                    <form action="/">
+                        <div class="cell">
+                            <label for="nom">Nom du produit : </label> <br>
+                            <input type="text" id="nom">
+                        </div>
+                        <div class="cell">
+                            <label for="marque">La marque du produit : </label> <br>
+                            <input type="text" id="marque">
+                        </div>
+                        <div class="cell">
+                            <label for="prix">Prix du produit : </label> <br>
+                            <input type="number" id="prix">
+                        </div>
+                        <div class="cell">
+                            <label for="date">La date de production : </label> <br>
+                            <input type="date" id="date">
+                        </div>
+                        <div class="list">
+                            <label for="type">Type du produit : </label> <br>
+                            <select name="type" id="type">
+                                <option value="hygiène et toilette">hygiène et toilette</option>
+                                <option value="soins esthétiques">soins esthétiques</option>
+                                <option value="produits solaires">produits solaires</option>
+                                <option value="beauté des mains et des pieds">beauté des mains et des pieds</option>
+                                <option value="produits de maquillage">produits de maquillage</option>
+                                <option value="entretien capillaires">entretien capillaires</option>
+                                <option value="parfums">parfums</option>
+                            </select>
+                        </div>
+                        <div class="cell">
+                            <label for="promotion">Produit en promotion ?</label> <br>
+                            <span>Non</span>
+                            <input type="radio" name="promotion" id="noPromo">
+                            <span>Oui</span>
+                            <input type="radio" name="promotion" id="Promo">
+                        </div>
+
+                        <div class="cell">
+                            <button id="ajouter">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="container table">
+            <div class="tableBox">
+                <table style="width:100%">
+                    <tr>
+                      <th>Nom du produit</th>
+                      <th>La marque du produit</th>
+                      <th>Prix</th>
+                      <th>Type du produit</th>
+                      <th>Date de production</th>
+                      <th>Produit en promotion ?</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                      <td>Invictus</td>
+                      <td>Invictus</td>
+                      <td>460 DH</td>
+                      <td>Parfume</td>
+                      <td>25-08-2022</td>
+                      <td>Oui</td>
+                      <td>
+                        <div>
+                            <button id="modifier">Modifier</button>
+                            <button id="supprimer">Supprimer</button>
+                        </div>
+                      </td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
