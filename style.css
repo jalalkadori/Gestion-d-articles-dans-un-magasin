@@ -6,18 +6,21 @@
     font-family: 'Roboto', sans-serif;
 
 }
-
+header{
+    width: 100%;
+    padding: 1% 5%;
+    background: lightcoral;
+}
 .container {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2% 0;
 }
 
 .row{
     width: 90%;
-    height: 80vh;
     background: whitesmoke;
     display: flex;
     flex-direction: row;
@@ -27,12 +30,10 @@
 }
 .imgBox{
     width: 30%;
-    height: 100%;
     background: lightblue;
 }
 .formBox {
     width: 70%;
-    height: 100%;
     background: lightgreen;
 }
 
@@ -99,7 +100,7 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
   }
-table tr td{
+td,th{
     text-align: center;
     padding: 10px 0;
 }
