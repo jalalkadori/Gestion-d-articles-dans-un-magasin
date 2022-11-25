@@ -1,5 +1,7 @@
 
 function Ajouter() {
+
+    // User Input 
     let Nom = document.getElementById('nom').value;
     let Marque = document.getElementById('marque');
     let Prix = document.getElementById('prix');
@@ -7,11 +9,21 @@ function Ajouter() {
     let Type = document.getElementById('type');
     let noPromo = document.getElementById('noPromo');
     let Promo = document.getElementById('Promo');
-    let table = document.getElementById('table');
 
-    let td = document.createElement("td");
-    let tr = document.createElement("tr");
-    table.appendChild(td,tr);
-    tr.appendChild(Nom);
+    //creating new table Row 
+    var table = document.querySelector('table');
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+
+    table.append(tr);
+    tr.appendChild(td);
+
+    td.innerText = Nom;
+   
+    
+
+
+
+    
 
 }
