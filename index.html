@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
     <title>MAGASIN</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                 </div>
 
                 <div class="formBox">
-                    <form action="/">
+                    <form action="#" onsubmit="return false">
                         <div class="cell">
                             <label for="nom">Nom du produit : </label> <br>
                             <input type="text" id="nom">
@@ -57,7 +58,7 @@
                         </div>
 
                         <div class="cell">
-                            <button id="ajouter">Ajouter</button>
+                            <button id="ajouter" onclick="Ajouter()">Ajouter</button>
                         </div>
                     </form>
                 </div>
@@ -66,7 +67,7 @@
 
         <section class="container table">
             <div class="tableBox">
-                <table style="width:100%">
+                <table style="width:100%" id="table">
                     <tr>
                       <th>Nom du produit</th>
                       <th>La marque du produit</th>
