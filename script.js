@@ -58,10 +58,7 @@ function Ajouter() {
 
     // Delet function  
 
-        const btn = document.querySelector('.supprimer');
-        
-        
-    
+    const btn = document.querySelector('.supprimer');
     btn.addEventListener("click", function()
     { btn.closest("tr").remove(); });
     
