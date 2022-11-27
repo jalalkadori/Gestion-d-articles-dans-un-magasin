@@ -62,7 +62,7 @@ function Ajouter() {
         
         
     
-    element.addEventListener("click", function()
+    btn.addEventListener("click", function()
     { btn.closest("tr").remove(); });
     
 
