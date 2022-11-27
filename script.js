@@ -16,8 +16,6 @@ function Ajouter() {
 
     for (let i = 0; i < 1; i++) {
         const row = document.createElement("tr")
-        const noPromo = document.querySelector('noPromo');
-        const Promo = document.querySelector('Promo');
             for (let j = 0; j < 7; j++) {
                 const cell = document.createElement("td");
                 row.appendChild(cell);
@@ -37,7 +35,7 @@ function Ajouter() {
                     cell.innerText = Date;
                 }
                 if(j == 5){
-                    cell.innerText = Non;
+                    cell.innerText = Nom;
                 }
 
                 if(j == 6){
