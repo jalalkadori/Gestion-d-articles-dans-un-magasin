@@ -31,7 +31,7 @@ function Ajouter() {
                 if(j == 3){
                     cell.innerText = Type;
                 }
-                if(j == 4){
+                if(j == 4){ 
                     cell.innerText = Date;
                 }
                 if(j == 5){
