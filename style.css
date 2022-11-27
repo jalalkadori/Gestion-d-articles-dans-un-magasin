@@ -103,11 +103,13 @@ td,th{
     text-align: center;
     padding: 10px 0;
 }
-#modifier  {
+.modifier  {
     padding: 10px 10px;
     background-color: aqua;
+    
 }
-#supprimer  {
+.supprimer  {
     padding: 10px 10px;
     background-color: lightcoral;
+    margin-left: 5px;
 }

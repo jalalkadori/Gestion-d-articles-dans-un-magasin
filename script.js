@@ -12,12 +12,14 @@ function Ajouter() {
 
     //creating new table Row 
     let table = document.querySelector('table');
-    let tBody = document.querySelector('tbody');
+    const tBody = document.querySelector('tbody');
 
     for (let i = 0; i < 1; i++) {
         const row = document.createElement("tr")
             for (let j = 0; j < 7; j++) {
                 const cell = document.createElement("td");
+                const suppButton = document.createElement("button");
+                const modiButton = document.createElement("button");
                 row.appendChild(cell);
                 if(j == 0){
                     cell.innerText = Nom;
@@ -39,12 +41,29 @@ function Ajouter() {
                 }
 
                 if(j == 6){
-                    cell.innerText = Nom;
+
+                    modiButton.innerText = "Modifier";
+                    modiButton.setAttribute("class", "modifier");
+                    cell.appendChild(modiButton);
+
+        
+                    suppButton.innerText = "Supprimer";
+                    suppButton.setAttribute("class", "supprimer");
+                    cell.appendChild(suppButton);
+                    
                 }
             }
         table.appendChild(row);
     }
+
+    // Delet function  
+
+        const btn = document.querySelector('.supprimer');
+        
+        
     
+    element.addEventListener("click", function()
+    { btn.closest("tr").remove(); });
     
 
     
