@@ -8,7 +8,7 @@
     <script src="./script.js"></script>
     <title>MAGASIN</title>
 </head>
-<body onload="Loading()">
+<body>
     <header>
         <h1>Store Manager</h1>
     </header>
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="formBox">
-                    <form action="#" onsubmit="return false">
+                    <form action="#" id="form">
                         <div class="cell">
                             <label for="nom">Nom du produit : </label> <br>
                             <input type="text" id="nom">
@@ -29,14 +29,17 @@
                         <div class="cell">
                             <label for="marque">La marque du produit : </label> <br>
                             <input type="text" id="marque">
+                            <span id="nomOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="prix">Prix du produit : </label> <br>
                             <input type="number" id="prix">
+                            <span id="nomOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="date">La date de production : </label> <br>
                             <input type="date" id="date">
+                            <span id="nomOutput"></span>
                         </div>
                         <div class="list">
                             <label for="type">Type du produit : </label> <br>
@@ -49,6 +52,7 @@
                                 <option value="entretien capillaires">entretien capillaires</option>
                                 <option value="parfums">parfums</option>
                             </select>
+                            <span id="nomOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="promotion">Produit en promotion ?</label> <br>
@@ -56,10 +60,11 @@
                             <input type="radio" name="promotion" id="noPromo">
                             <span>Oui</span>
                             <input type="radio" name="promotion" id="Promo">
+                            <span id="nomOutput"></span>
                         </div>
 
                         <div class="cell">
-                            <button id="ajouter" onclick="Ajouter()">Ajouter</button>
+                            <button id="ajouter">Ajouter</button>
                         </div>
                     </form>
                 </div>

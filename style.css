@@ -67,6 +67,12 @@ select {
     border-radius: 5px;
     cursor: pointer;
 }
+.erreur {
+    border: 1px solid red;
+}
+.valide {
+    border: 1px solid green;
+}
 
 select option {
     background-color: lightgreen;
