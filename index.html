@@ -8,7 +8,7 @@
     <script src="./script.js"></script>
     <title>MAGASIN</title>
 </head>
-<body>
+<body onload="Loading()">
     <header>
         <h1>Store Manager</h1>
     </header>
@@ -24,6 +24,7 @@
                         <div class="cell">
                             <label for="nom">Nom du produit : </label> <br>
                             <input type="text" id="nom">
+                            <span id="nomOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="marque">La marque du produit : </label> <br>
@@ -67,7 +68,7 @@
 
         <section class="container table">
             <div class="tableBox">
-                <table style="width:100%">
+                <table id="myTable" style="width:100%">
                     <tr id="TableLength">
                       <th>Nom du produit</th>
                       <th>La marque du produit</th>
@@ -77,20 +78,7 @@
                       <th>Produit en promotion ?</th>
                       <th>Action</th>
                     </tr>
-                    <tr>
-                      <td>Invictus</td>
-                      <td>Invictus</td>
-                      <td>460 DH</td>
-                      <td>Parfume</td>
-                      <td>25-08-2022</td>
-                      <td>Oui</td>
-                      <td>
-                        <div>
-                            <button class="modifier">Modifier</button>
-                            <button class="supprimer">Supprimer</button>
-                        </div>
-                      </td>
-                    </tr>
+                    
                     
                 </table>
             </div>
