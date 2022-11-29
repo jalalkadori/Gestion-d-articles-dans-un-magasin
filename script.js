@@ -15,6 +15,8 @@ function checkInputs() {
     const Type = document.getElementById('type');
     const noPromo = document.getElementById('noPromo');
     const Promo = document.getElementById('Promo');
+    const ajouterbotton = document.getElementById('ajouter');
+    ajouterbotton.innerText = "Ajouter";
 
     const nomOutput = document.getElementById('nomOutput');
     const marqueOutput = document.getElementById('marqueOutput');
@@ -91,7 +93,7 @@ function checkInputs() {
      
     } else {
         Type.style.border = "2px solid red";
-        promoOutput.innerHTML = "*Inserez le type du produit !";
+        promoOutput.innerHTML = "*Produit en Promotion ?";
         counter--;
     }
 
@@ -103,7 +105,6 @@ function checkInputs() {
 function Ajouter() {
 
     //creating new table Row 
-    let table = document.querySelector('table');
     const tBody = document.querySelector('tbody');
     const NomValue = document.getElementById('nom').value;
     const MarqueValue = document.getElementById('marque').value;
@@ -158,7 +159,7 @@ function Ajouter() {
                     // iserer un botton de modification  
                     modiButton.innerText = "Modifier";
                     modiButton.setAttribute("class", "modifier");
-                    modiButton.setAttribute("onclick", "modification()");
+                    modiButton.setAttribute("onclick", "modification(this)");
                     cell.appendChild(modiButton);
                     // iserer un botton de suppression 
                     suppButton.innerText = "Supprimer";
@@ -172,12 +173,7 @@ function Ajouter() {
         
     }
     // suppression des données entrées :
-        NomValue = "";
-        MarqueValue = "";
-        PrixValue = "";
-        DateValue = "";
-        NomValue = "";
-        TypeValue = "";
+      
 }
 //      // Delet function 
 
@@ -186,8 +182,33 @@ function deletRow(r) {
         document.getElementById("myTable").deleteRow(i);
 }
 //      // Modification function 
-function modification() {
-        
+function modification(x) {
+    const table = document.querySelector('table');
+    const Nom = document.getElementById('nom');
+    const Marque = document.getElementById('marque');
+    const Prix = document.getElementById('prix');
+    const Type = document.getElementById('type');
+    const Date = document.getElementById('date');
+    const noPromo = document.getElementById('noPromo');
+    const Promo = document.getElementById('Promo');
+    const ajouterbotton = document.getElementById('ajouter');
+
+
+    ajouterbotton.innerText = "Modifier";
+
+    var i = x.parentNode.parentNode.rowIndex;
+    Nom.value = table.rows[i].cells[0].innerText;
+    Marque.value = table.rows[i].cells[1].innerText;
+    Prix.value = table.rows[i].cells[2].innerText;
+    Date.value = table.rows[i].cells[3].innerText;
+    Type.value = table.rows[i].cells[4].innerText;
+
+    const radio = table.rows[i].cells[5].innerHTML;
+    console.log(radio);
+    if (radio === "oui") {
+        Promo.checked = true; 
+    }
+ 
 }
 
   

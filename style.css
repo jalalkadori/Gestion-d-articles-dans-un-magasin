@@ -30,11 +30,13 @@ header{
 }
 .imgBox{
     width: 30%;
-    background: lightblue;
+    background: url('./undraw_Reminder_re_fe15.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .formBox {
     width: 70%;
-    background: whitesmoke;
+    background: white;
     height: 100%;
 }
 
