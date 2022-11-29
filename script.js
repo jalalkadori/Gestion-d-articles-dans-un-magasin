@@ -1,119 +1,190 @@
-//  declaration des variables
-const form = document.getElementById('form');
-const Nom = document.getElementById('nom');
-const Marque = document.getElementById('marque');
-const Prix = document.getElementById('prix');
-const Date = document.getElementById('date');
-const Type = document.getElementById('type');
-const noPromo = document.getElementById('noPromo');
-const Promo = document.getElementById('Promo');
 
 
-form.addEventListener('submit', e => {
-	e.preventDefault();
-	
-	checkInputs();
-});
+
+
+
 
 
 function checkInputs() {
+    //  declaration des variables
+    const form = document.getElementById('form');
+    const Nom = document.getElementById('nom');
+    const Marque = document.getElementById('marque');
+    const Prix = document.getElementById('prix');
+    const Date = document.getElementById('date');
+    const Type = document.getElementById('type');
+    const noPromo = document.getElementById('noPromo');
+    const Promo = document.getElementById('Promo');
+
+    const nomOutput = document.getElementById('nomOutput');
+    const marqueOutput = document.getElementById('marqueOutput');
+    const prixOutput = document.getElementById('prixOutput');
+    const dateOutput = document.getElementById('dateOutput');
+    const typeOutput = document.getElementById('typeOutput');
+    const promoOutput = document.getElementById('promoOutput');
+
+    // valeurs des inputs : 
     const NomValue = document.getElementById('nom').value;
     const MarqueValue = document.getElementById('marque').value;
     const PrixValue = document.getElementById('prix').value;
     const DateValue = document.getElementById('date').value;
     const TypeValue = document.getElementById('type').value;
-    const noPromoValue = document.getElementById('noPromo');
-    const PromoValue = document.getElementById('Promo');
+    const noPromoValue = document.getElementById('noPromo').checked;
+    const PromoValue = document.getElementById('Promo').checked;
 
-    if(NomValue === '') {
-		setError(Nom, 'Username cannot be blank');
-	} else {
-		setSuccess(Nom);
-	}
+    counter = 0;
 
+    // Nom du produis 
+    if(NomValue != '' && NomValue.length < 30 && NomValue.length > 3){
+        Nom.style.border = "2px solid green";
+        nomOutput.innerHTML = "";
+        counter++;
+    } else {
+        nomOutput.innerHTML = "*Inserez le nom du produit !";
+        Nom.style.border = "2px solid red";
+    }
+    // Nom de la marque 
+    if(MarqueValue != '' && MarqueValue.length < 30 && NomValue.length > 3){
+        Marque.style.border = "2px solid green";
+        marqueOutput.innerHTML = "";
+        counter++;
+    } else {
+        Marque.style.border = "2px solid red";
+        marqueOutput.innerHTML = "*Inserez le nom de la marque !"; 
+    }
+    // prix du produit 
+    if(PrixValue === ''){
+        Prix.style.border = "2px solid red";
+        prixOutput.innerHTML = "*Inserez le prix du produit !";
+    } else {
+        Prix.style.border = "2px solid green";
+        prixOutput.innerHTML = "";
+        counter++;
+    }
+    // date du production : 
+    if(DateValue === ''){
+        Date.style.border = "2px solid red";
+        dateOutput.innerHTML = "*Inserez la date de production !";
+    } else {
+        Date.style.border = "2px solid green";
+        dateOutput.innerHTML = "";
+        counter++;
+    }
+    // type du produit : 
+    if(TypeValue === ''){
+        Type.style.border = "2px solid red";
+        typeOutput.innerHTML = "*Inserez le type du produit !";
+    } else {
+        Type.style.border = "2px solid green";
+        typeOutput.innerHTML = "";
+        counter++;
+    }
+    // produit en promotion : 
+    if(noPromoValue || PromoValue){
+        promoOutput.innerHTML = "";
+        counter++;
+     
+    } else {
+        Type.style.border = "2px solid red";
+        promoOutput.innerHTML = "*Inserez le type du produit !";
+    }
+
+    if(counter = 6) {
+        Ajouter()
+    }
 }
 
-function setError(input, message) {
-	const cell = input.parentElement;
-	const span = cell.querySelector('span');
-	cell.className = 'cell erreur';
-	span.innerText = message;
+function Ajouter() {
 
-    // suppButton.setAttribute("class", "supprimer");
-}
+    //creating new table Row 
+    let table = document.querySelector('table');
+    const tBody = document.querySelector('tbody');
+    const NomValue = document.getElementById('nom').value;
+    const MarqueValue = document.getElementById('marque').value;
+    const PrixValue = document.getElementById('prix').value;
+    const TypeValue = document.getElementById('type').value;
 
-function setSuccess(input) {
-	const cell = input.parentElement;
-	cell.className = 'cell valide';
-}
-	
+    // Modifiacation date format :
+    const DateValue = document.getElementById('date').value;
 
-
+    let objectDate = new Date();
 
 
-// function Ajouter() {
+    let day = objectDate.getDate();
+    console.log(day); // 23
 
-//     //creating new table Row 
-//     let table = document.querySelector('table');
-//     const tBody = document.querySelector('tbody');
+    let month = objectDate.getMonth();
+    console.log(month + 1); // 8
 
-    
-//     for (let i = 0; i < 1; i++) {
-//         const row = document.createElement("tr")
-//             for (let j = 0; j < 7; j++) {
-//                 const cell = document.createElement("td");
-//                 const suppButton = document.createElement("button");
-//                 const modiButton = document.createElement("button");
-//                 const nomOutput = document.querySelector("#nomOutput");
+    let year = objectDate.getFullYear();
+    console.log(year); // 2022
 
-                
-//                 row.appendChild(cell);
-//                 // Verification du Nom du produit 
-//                 if (j == 0) {
-//                     cell.innerText = Nom; 
-//                 }
+    for (let i = 0; i < 1; i++) {
+        const row = document.createElement("tr")
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement("td");
+                const suppButton = document.createElement("button");
+                const modiButton = document.createElement("button");
+
+                row.appendChild(cell);
+                if (j == 0) {
+                    cell.innerText = NomValue; 
+                }
                
-//                 // if(j == 1){
-//                 //     cell.innerText = Marque;
-//                 // }
-//                 // if(j == 2){
-//                 //     cell.innerText = Prix;
-//                 // }
-//                 // if(j == 3){
-//                 //     cell.innerText = Type;
-//                 // }
-//                 // if(j == 4){ 
-//                 //     cell.innerText = Date;
-//                 // }
-//                 // if(j == 5){
-//                 //     cell.innerText = Nom;
-//                 // }
-//                 // if(j == 6){
-//                 //     // iserer un botton de modification  
-//                 //     modiButton.innerText = "Modifier";
-//                 //     modiButton.setAttribute("class", "modifier");
-//                 //     cell.appendChild(modiButton);
-//                 //     // iserer un botton de suppression 
-//                 //     suppButton.innerText = "Supprimer";
-//                 //     suppButton.setAttribute("class", "supprimer");
-//                 //     suppButton.setAttribute("onclick", "deletRow(this)");
-//                 //     cell.appendChild(suppButton);
-//                 // }
-//             }
-//         table.appendChild(row);
-//     }
-// }
+                if(j == 1){
+                    cell.innerText = MarqueValue;
+                }
+                if(j == 2){
+                    cell.innerText = PrixValue;
+                }
+                if(j == 3){
+                    cell.innerText = DateValue.split("").reverse().join("");
+                }
+                if(j == 4){ 
+                    cell.innerText = TypeValue;
+                }
+                if(j == 5){
+                    var getSelectedValue = document.querySelector( 'input[name="promotion"]:checked');
+                    cell.innerText = getSelectedValue.value;
+                }
+
+                if(j == 6){
+                    // iserer un botton de modification  
+                    modiButton.innerText = "Modifier";
+                    modiButton.setAttribute("class", "modifier");
+                    modiButton.setAttribute("onclick", "modification()");
+                    cell.appendChild(modiButton);
+                    // iserer un botton de suppression 
+                    suppButton.innerText = "Supprimer";
+                    suppButton.setAttribute("class", "supprimer");
+                    suppButton.setAttribute("onclick", "deletRow(this)");
+                    cell.appendChild(suppButton);
+                }
+            }
+        tBody.appendChild(row);
+        
+        
+    }
+    // suppression des données entrées :
+        NomValue = "";
+        MarqueValue = "";
+        PrixValue = "";
+        DateValue = "";
+        NomValue = "";
+        TypeValue = "";
+}
 //      // Delet function 
 
-// function deletRow(r) {
-//         var i = r.parentNode.parentNode.rowIndex;
-//         document.getElementById("myTable").deleteRow(i);
-// }
+function deletRow(r) {
+        var i = r.parentNode.parentNode.rowIndex;
+        document.getElementById("myTable").deleteRow(i);
+}
+//      // Modification function 
+function modification() {
+        
+}
 
-    // const btn = document.querySelector('.supprimer');
-    // btn.addEventListener("click", function()
-    // { btn.closest("tr").remove(); });
-    
+  
 
     
   

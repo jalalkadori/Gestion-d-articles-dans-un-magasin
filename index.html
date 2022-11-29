@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="formBox">
-                    <form action="#" id="form">
+                    <form action="#" id="form" onsubmit="return false">
                         <div class="cell">
                             <label for="nom">Nom du produit : </label> <br>
                             <input type="text" id="nom">
@@ -29,21 +29,22 @@
                         <div class="cell">
                             <label for="marque">La marque du produit : </label> <br>
                             <input type="text" id="marque">
-                            <span id="nomOutput"></span>
+                            <span id="marqueOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="prix">Prix du produit : </label> <br>
                             <input type="number" id="prix">
-                            <span id="nomOutput"></span>
+                            <span id="prixOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="date">La date de production : </label> <br>
                             <input type="date" id="date">
-                            <span id="nomOutput"></span>
+                            <span id="dateOutput"></span>
                         </div>
                         <div class="list">
                             <label for="type">Type du produit : </label> <br>
                             <select name="type" id="type">
+                                <option selected></option>
                                 <option value="hygiène et toilette">hygiène et toilette</option>
                                 <option value="soins esthétiques">soins esthétiques</option>
                                 <option value="produits solaires">produits solaires</option>
@@ -52,19 +53,19 @@
                                 <option value="entretien capillaires">entretien capillaires</option>
                                 <option value="parfums">parfums</option>
                             </select>
-                            <span id="nomOutput"></span>
+                            <span id="typeOutput"></span>
                         </div>
                         <div class="cell">
                             <label for="promotion">Produit en promotion ?</label> <br>
-                            <span>Non</span>
-                            <input type="radio" name="promotion" id="noPromo">
-                            <span>Oui</span>
-                            <input type="radio" name="promotion" id="Promo">
-                            <span id="nomOutput"></span>
+                            <label>Non</span>
+                            <input type="radio" name="promotion" value="Non" id="noPromo">
+                            <label>Oui</span>
+                            <input type="radio" name="promotion" value="Oui" id="Promo">
+                            <span id="promoOutput"></span>
                         </div>
 
                         <div class="cell">
-                            <button id="ajouter">Ajouter</button>
+                            <button id="ajouter" onclick="checkInputs()">Ajouter</button>
                         </div>
                     </form>
                 </div>
