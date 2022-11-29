@@ -42,6 +42,7 @@ function checkInputs() {
     } else {
         nomOutput.innerHTML = "*Inserez le nom du produit !";
         Nom.style.border = "2px solid red";
+        counter--;
     }
     // Nom de la marque 
     if(MarqueValue != '' && MarqueValue.length < 30 && NomValue.length > 3){
@@ -50,12 +51,14 @@ function checkInputs() {
         counter++;
     } else {
         Marque.style.border = "2px solid red";
-        marqueOutput.innerHTML = "*Inserez le nom de la marque !"; 
+        marqueOutput.innerHTML = "*Inserez le nom de la marque !";
+        counter--; 
     }
     // prix du produit 
     if(PrixValue === ''){
         Prix.style.border = "2px solid red";
         prixOutput.innerHTML = "*Inserez le prix du produit !";
+        counter--;
     } else {
         Prix.style.border = "2px solid green";
         prixOutput.innerHTML = "";
@@ -65,6 +68,7 @@ function checkInputs() {
     if(DateValue === ''){
         Date.style.border = "2px solid red";
         dateOutput.innerHTML = "*Inserez la date de production !";
+        counter--;
     } else {
         Date.style.border = "2px solid green";
         dateOutput.innerHTML = "";
@@ -74,6 +78,7 @@ function checkInputs() {
     if(TypeValue === ''){
         Type.style.border = "2px solid red";
         typeOutput.innerHTML = "*Inserez le type du produit !";
+        counter--;
     } else {
         Type.style.border = "2px solid green";
         typeOutput.innerHTML = "";
@@ -87,6 +92,7 @@ function checkInputs() {
     } else {
         Type.style.border = "2px solid red";
         promoOutput.innerHTML = "*Inserez le type du produit !";
+        counter--;
     }
 
     if(counter = 6) {
@@ -107,17 +113,17 @@ function Ajouter() {
     // Modifiacation date format :
     const DateValue = document.getElementById('date').value;
 
-    let objectDate = new Date();
+    // let objectDate = new Date();
 
 
-    let day = objectDate.getDate();
-    console.log(day); // 23
+    // let day = objectDate.getDate();
+    // console.log(day); // 23
 
-    let month = objectDate.getMonth();
-    console.log(month + 1); // 8
+    // let month = objectDate.getMonth();
+    // console.log(month + 1); // 8
 
-    let year = objectDate.getFullYear();
-    console.log(year); // 2022
+    // let year = objectDate.getFullYear();
+    // console.log(year); // 2022
 
     for (let i = 0; i < 1; i++) {
         const row = document.createElement("tr")
@@ -138,7 +144,7 @@ function Ajouter() {
                     cell.innerText = PrixValue;
                 }
                 if(j == 3){
-                    cell.innerText = DateValue.split("").reverse().join("");
+                    cell.innerText = DateValue;
                 }
                 if(j == 4){ 
                     cell.innerText = TypeValue;
