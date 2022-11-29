@@ -121,7 +121,13 @@ td,th{
 .modifier  {
     padding: 10px 10px;
     background-color: aqua;
-    
+}
+
+#modifier {
+    display: none;
+    padding: 10px 10px;
+    background-color: lightseagreen;
+    margin-left: 5px;
 }
 .supprimer  {
     padding: 10px 10px;

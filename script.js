@@ -1,41 +1,43 @@
 
 
+    
 
 
 
 
+//  input verification
 
 function checkInputs() {
-    //  declaration des variables
-    const form = document.getElementById('form');
-    const Nom = document.getElementById('nom');
-    const Marque = document.getElementById('marque');
-    const Prix = document.getElementById('prix');
-    const Date = document.getElementById('date');
-    const Type = document.getElementById('type');
-    const noPromo = document.getElementById('noPromo');
-    const Promo = document.getElementById('Promo');
-    const ajouterbotton = document.getElementById('ajouter');
-    ajouterbotton.innerText = "Ajouter";
 
-    const nomOutput = document.getElementById('nomOutput');
-    const marqueOutput = document.getElementById('marqueOutput');
-    const prixOutput = document.getElementById('prixOutput');
-    const dateOutput = document.getElementById('dateOutput');
-    const typeOutput = document.getElementById('typeOutput');
-    const promoOutput = document.getElementById('promoOutput');
+        //  declaration des variables
+        var form = document.getElementById('form');
+        var Nom = document.getElementById('nom');
+        var Marque = document.getElementById('marque');
+        var Prix = document.getElementById('prix');
+        var Date = document.getElementById('date');
+        var Type = document.getElementById('type');
+        var noPromo = document.getElementById('noPromo');
+        var Promo = document.getElementById('Promo');
+        var ajouterbotton = document.getElementById('ajouter');
+        ajouterbotton.innerText = "Ajouter";
+    
+        // outputs 
+        var nomOutput = document.getElementById('nomOutput');
+        var marqueOutput = document.getElementById('marqueOutput');
+        var prixOutput = document.getElementById('prixOutput');
+        var dateOutput = document.getElementById('dateOutput');
+        var typeOutput = document.getElementById('typeOutput');
+        var promoOutput = document.getElementById('promoOutput');
 
     // valeurs des inputs : 
-    const NomValue = document.getElementById('nom').value;
-    const MarqueValue = document.getElementById('marque').value;
-    const PrixValue = document.getElementById('prix').value;
-    const DateValue = document.getElementById('date').value;
-    const TypeValue = document.getElementById('type').value;
-    const noPromoValue = document.getElementById('noPromo').checked;
-    const PromoValue = document.getElementById('Promo').checked;
-
-    counter = 0;
-
+    var NomValue = document.getElementById('nom').value;
+    var MarqueValue = document.getElementById('marque').value;
+    var PrixValue = document.getElementById('prix').value;
+    var DateValue = document.getElementById('date').value;
+    var TypeValue = document.getElementById('type').value;
+    var noPromoValue = document.getElementById('noPromo').checked;
+    var PromoValue = document.getElementById('Promo').checked;
+    let counter = 0;
     // Nom du produis 
     if(NomValue != '' && NomValue.length < 30 && NomValue.length > 3){
         Nom.style.border = "2px solid green";
@@ -67,6 +69,7 @@ function checkInputs() {
         counter++;
     }
     // date du production : 
+    DateValue = DateValue.split("-").reverse().join("-");
     if(DateValue === ''){
         Date.style.border = "2px solid red";
         dateOutput.innerHTML = "*Inserez la date de production !";
@@ -74,7 +77,8 @@ function checkInputs() {
     } else {
         Date.style.border = "2px solid green";
         dateOutput.innerHTML = "";
-        counter++;
+        DateValue ="";
+        counter++; 
     }
     // type du produit : 
     if(TypeValue === ''){
