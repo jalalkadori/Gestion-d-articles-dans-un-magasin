@@ -1,12 +1,5 @@
 
-
-    
-
-
-
-
 //  input verification
-
 function checkInputs() {
 
         //  declaration des variables
@@ -104,44 +97,29 @@ function checkInputs() {
     if(counter = 6) {
         Ajouter()
     }
+
+    
 }
 
 function Ajouter() {
-
     //creating new table Row 
     const tBody = document.querySelector('tbody');
     const NomValue = document.getElementById('nom').value;
     const MarqueValue = document.getElementById('marque').value;
     const PrixValue = document.getElementById('prix').value;
     const TypeValue = document.getElementById('type').value;
-
     // Modifiacation date format :
     const DateValue = document.getElementById('date').value;
-
-    // let objectDate = new Date();
-
-
-    // let day = objectDate.getDate();
-    // console.log(day); // 23
-
-    // let month = objectDate.getMonth();
-    // console.log(month + 1); // 8
-
-    // let year = objectDate.getFullYear();
-    // console.log(year); // 2022
-
-    for (let i = 0; i < 1; i++) {
+    for (let k = 0; k < 1; k++) {
         const row = document.createElement("tr")
             for (let j = 0; j < 7; j++) {
                 const cell = document.createElement("td");
                 const suppButton = document.createElement("button");
                 const modiButton = document.createElement("button");
-
                 row.appendChild(cell);
                 if (j == 0) {
                     cell.innerText = NomValue; 
                 }
-               
                 if(j == 1){
                     cell.innerText = MarqueValue;
                 }
@@ -158,7 +136,6 @@ function Ajouter() {
                     var getSelectedValue = document.querySelector( 'input[name="promotion"]:checked');
                     cell.innerText = getSelectedValue.value;
                 }
-
                 if(j == 6){
                     // iserer un botton de modification  
                     modiButton.innerText = "Modifier";
@@ -177,7 +154,7 @@ function Ajouter() {
         
     }
     // suppression des données entrées :
-      
+    clear()  
 }
 //      // Delet function 
 
@@ -185,6 +162,10 @@ function deletRow(r) {
         var i = r.parentNode.parentNode.rowIndex;
         document.getElementById("myTable").deleteRow(i);
 }
+
+// update dunction  
+
+
 //      // Modification function 
 function modification(x) {
     const table = document.querySelector('table');
@@ -195,26 +176,50 @@ function modification(x) {
     const Date = document.getElementById('date');
     const noPromo = document.getElementById('noPromo');
     const Promo = document.getElementById('Promo');
-    const ajouterbotton = document.getElementById('ajouter');
+    const addButton = document.getElementById('ajouter');
+    const ModiButton = document.getElementById('modifier');
 
-
-    ajouterbotton.innerText = "Modifier";
-
+    addButton.style.display = "none";
+    ModiButton.style.display = "block"; 
     var i = x.parentNode.parentNode.rowIndex;
+
+    ModiButton.onclick = function Update() {
+        table.rows[i].cells[0].innerText = Nom.value;
+        table.rows[i].cells[1].innerText = Marque.value;
+        table.rows[i].cells[2].innerText = Prix.value;
+        table.rows[i].cells[3].innerText = Date.value;
+        table.rows[i].cells[4].innerText = Type.value;
+
+        let getSelectedValue = document.querySelector('input[name="promotion"]:checked');
+        table.rows[i].cells[5].innerText = getSelectedValue.value;
+
+        clear()
+    }
+    
     Nom.value = table.rows[i].cells[0].innerText;
     Marque.value = table.rows[i].cells[1].innerText;
     Prix.value = table.rows[i].cells[2].innerText;
     Date.value = table.rows[i].cells[3].innerText;
     Type.value = table.rows[i].cells[4].innerText;
-
     const radio = table.rows[i].cells[5].innerHTML;
-    console.log(radio);
-    if (radio === "oui") {
+    if ( radio == "Oui") {
         Promo.checked = true; 
+    } else {
+        noPromo.checked = true; 
     }
- 
 }
 
+// pour vider les input
+
+function clear() {
+    document.getElementById('nom').value ='';
+    document.getElementById('marque').value ='';
+    document.getElementById('prix').value='';
+    document.getElementById('date').value='';
+    document.getElementById('type').value='';
+    document.getElementById('noPromo').checked = false;
+    document.getElementById('Promo').checked = false;
+}
   
 
     
