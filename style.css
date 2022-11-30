@@ -9,7 +9,8 @@
 header{
     width: 100%;
     padding: 1% 5%;
-    background: lightcoral;
+    background: #6C63FF;
+    color: white;
 }
 .container {
     width: 100%;
@@ -17,6 +18,42 @@ header{
     justify-content: center;
     align-items: center;
     margin: 2% 0;
+}
+
+#confiMsg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.msgBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: lightgoldenrodyellow;
+    border: 1px solid black;
+}
+#confiMsg h2 {
+    font-size: 36px;
+}
+#delete,#cancel{
+    width: 250px;
+    padding: 10px 0;
+    font-size: 18px;
+    background-color: #CA3C66;
+    color: white;
+    border: none;
+    outline: none;
+}
+#cancel{
+    background-color: #D4D3DC;
+    color: #384454;
 }
 
 .row{
@@ -83,22 +120,21 @@ span {
     border: 1px solid green;
 }
 
-select option {
-    background-color: lightgreen;
-}
-
 input[type=redio] {
     margin-left: 10px;
 }
 #ajouter {
     width: 100%;
     padding: 15px 0;
-    background: lightblue;
+    background: #6C63FF;
+    color: white;
+    font-size: 18px;
     border: none;
     outline: none;
 }
 #ajouter:hover {
     background: lightsalmon;
+    color: blackQ;
 }
 
 #modifier {
@@ -127,14 +163,17 @@ td,th{
     text-align: center;
     padding: 10px 0;
 }
-.modifier  {
+.modifier,.supprimer {
     padding: 10px 10px;
-    background-color: aqua;
+    background-color: #4AA3A2;
+    color: white;
+    border: none;
+    outline: none;
 }
 
 
 .supprimer  {
-    padding: 10px 10px;
-    background-color: lightcoral;
+    background-color: #CA3C66;
     margin-left: 5px;
+    color: white;
 }

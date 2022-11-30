@@ -160,7 +160,23 @@ function Ajouter() {
 
 function deletRow(r) {
         var i = r.parentNode.parentNode.rowIndex;
-        document.getElementById("myTable").deleteRow(i);
+        const table = document.getElementById("myTable");
+        const deleMsg = document.getElementById('deleMsg');
+        const cancel = document.getElementById('cancel');
+        const confirmDelete = document.getElementById('delete');
+        let MsgBox = document.getElementById('confiMsg');
+
+        MsgBox.style.display = "flex";
+        deleMsg.innerText = "voulez vous vraiment supprimer ce produit du tableau ?"
+
+        confirmDelete.onclick = function confirmDelet() {
+            table.deleteRow(i);
+            MsgBox.style.display = "none";
+        }
+        cancel.onclick = function annuler(){
+            MsgBox.style.display = "none";
+        }
+        
 }
 
 // update dunction  
