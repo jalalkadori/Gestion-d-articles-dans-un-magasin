@@ -209,6 +209,8 @@ function modification(x) {
         let getSelectedValue = document.querySelector('input[name="promotion"]:checked');
         table.rows[i].cells[5].innerText = getSelectedValue.value;
 
+        addButton.style.display = "block";
+        ModiButton.style.display = "none";
         clear()
     }
     
