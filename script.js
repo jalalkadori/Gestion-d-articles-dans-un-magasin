@@ -175,14 +175,9 @@ function deletRow(r) {
         }
         cancel.onclick = function annuler(){
             MsgBox.style.display = "none";
-        }
-        
+        }        
 }
-
-// update dunction  
-
-
-//      // Modification function 
+// Modification function 
 function modification(x) {
     const table = document.querySelector('table');
     const Nom = document.getElementById('nom');
@@ -226,9 +221,7 @@ function modification(x) {
         noPromo.checked = true; 
     }
 }
-
 // pour vider les input
-
 function clear() {
     document.getElementById('nom').value ='';
     document.getElementById('marque').value ='';
