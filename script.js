@@ -150,8 +150,6 @@ function Ajouter() {
                 }
             }
         tBody.appendChild(row);
-        
-        
     }
     // suppression des données entrées :
     clear()  
